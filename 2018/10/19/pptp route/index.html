@@ -13,11 +13,10 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="测试平台：Openwrt
-在/etc/hotplug.d/iface/下添加30-routes文件,系统将在接口状态发生生变化时执行该脚本。">
   <meta name="author" content="Sakari">
   <meta name="keywords" content="">
-  <meta name="description" content="测试平台：Openwrt 在&#x2F;etc&#x2F;hotplug.d&#x2F;iface&#x2F;下添加30-routes文件,系统将在接口状态发生生变化时执行该脚本。">
+  
+    <meta name="description" content="测试平台：Openwrt 在&#x2F;etc&#x2F;hotplug.d&#x2F;iface&#x2F;下添加30-routes文件,系统将在接口状态发生生变化时执行该脚本。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何让pptp连接&#x2F;断开后自动添加路由">
 <meta property="og:url" content="http://example.com/2018/10/19/pptp%20route/index.html">
@@ -28,6 +27,7 @@
 <meta property="article:modified_time" content="2021-03-13T10:09:40.000Z">
 <meta property="article:author" content="Sakari">
 <meta name="twitter:card" content="summary_large_image">
+  
   
   <title>如何让pptp连接/断开后自动添加路由 - Sakari&#39;s Blog</title>
 
@@ -70,11 +70,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
@@ -258,7 +258,7 @@
 <span id="more"></span>
 
 <p>然后在<code>30-routes</code>中写入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifdown&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;pptp-vpn0&quot;</span> ]<br><span class="hljs-keyword">then</span><br><br><span class="hljs-comment">#在此添加断开后的代码</span><br><br><span class="hljs-keyword">fi</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifup&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;pptp-vpn0&quot;</span> ]<br><span class="hljs-keyword">then</span><br><br><span class="hljs-comment">#在此添加连接后需要执行的代码</span><br><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifdown&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;pptp-vpn0&quot;</span> ]<br><span class="hljs-keyword">then</span><br><br><span class="hljs-comment">#在此添加断开后的代码</span><br><br><span class="hljs-keyword">fi</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifup&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;pptp-vpn0&quot;</span> ]<br><span class="hljs-keyword">then</span><br><br><span class="hljs-comment">#在此添加连接后需要执行的代码</span><br><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
 
 
 <p>把<code>pptp-vpn0</code>修改为自己想要的接口名。</p>
@@ -442,7 +442,7 @@
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>
