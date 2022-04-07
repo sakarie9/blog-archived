@@ -80,7 +80,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -259,10 +259,10 @@
             <h1 style="display: none">Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程</h1>
             
             <div class="markdown-body">
-              <p>使用 Bot 在 Telegram 及 QQ 间转发消息，基本可以做到去 QQ 化，仅在 Telegram 上与 QQ 好友/群组互动</p>
+              <p>使用 Bot 在 Telegram 及 QQ 间转发消息，基本可以做到去 QQ 化，仅在 Telegram 上与 QQ 好友&#x2F;群组互动</p>
 <span id="more"></span>
 
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>使用 Bot 在 Telegram 及 QQ 间转发消息，基本可以做到去 QQ 化，仅在 Telegram 上与 QQ 好友/群组互动</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>使用 Bot 在 Telegram 及 QQ 间转发消息，基本可以做到去 QQ 化，仅在 Telegram 上与 QQ 好友&#x2F;群组互动</p>
 <p>本项目使用 Docker Compose 简化了 <a target="_blank" rel="noopener" href="https://github.com/ehForwarderBot/ehForwarderBot">Telegram Bot</a> 和 <a target="_blank" rel="noopener" href="https://github.com/Mrs4s/go-cqhttp">QQ Bot</a> 的安装与配置，仅需要 Docker Compose 与流畅的国际互联网连接即可使用</p>
 <h3 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://www.docker.com/">Docker</a></li>
@@ -294,9 +294,10 @@
 
 <h3 id="配置GOCQ端"><a href="#配置GOCQ端" class="headerlink" title="配置GOCQ端"></a>配置<code>GOCQ</code>端</h3><ol>
 <li><p>编辑 <code>gocq/config.yml</code> 配置文件</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">account:         <span class="hljs-comment"># 账号相关</span><br>  uin: 000000000 <span class="hljs-comment"># QQ 账号</span><br>  password: <span class="hljs-string">&#x27;&#x27;</span>   <span class="hljs-comment"># QQ 密码，为空时使用扫码登录</span><br></code></pre></td></tr></table></figure></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">account:         <span class="hljs-comment"># 账号相关</span><br>  uin: 000000000 <span class="hljs-comment"># QQ 账号</span><br>  password: <span class="hljs-string">&#x27;&#x27;</span>   <span class="hljs-comment"># QQ 密码，为空时使用扫码登录</span><br></code></pre></td></tr></table></figure>
+</li>
 <li><p>（可选）修改登陆协议，运行如下命令，待提示生成 <code>device.json</code> 后 <code>ctrl+c</code> 退出，编辑 <code>gocq/device.json</code>，参考 <a target="_blank" rel="noopener" href="https://docs.go-cqhttp.org/guide/config.html#%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF">设备信息</a></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run --rm -it --name=<span class="hljs-string">&quot;gocq&quot;</span> -v <span class="hljs-variable">$PWD</span>/gocq:/data xzsk2/gocqhttp-docker:latest<br></code></pre></td></tr></table></figure></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run --<span class="hljs-built_in">rm</span> -it --name=<span class="hljs-string">&quot;gocq&quot;</span> -v <span class="hljs-variable">$PWD</span>/gocq:/data xzsk2/gocqhttp-docker:latest<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="配置EFB端"><a href="#配置EFB端" class="headerlink" title="配置EFB端"></a>配置<code>EFB</code>端</h3><ol>
 <li><p>获取<code>token</code></p>
@@ -319,9 +320,11 @@
 <p>本教程使用 <a target="_blank" rel="noopener" href="https://github.com/TyrantLucifer/ssr-command-client">ssr-command-client</a> 作为本地代理，可参考此项目文档配置</p>
 <ol>
 <li><p>安装</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install shadowsocksr-cli<br></code></pre></td></tr></table></figure></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install shadowsocksr-cli<br></code></pre></td></tr></table></figure>
+</li>
 <li><p>使用</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">    <span class="hljs-comment"># 添加订阅链接</span><br>    shadowsocksr-cli --add-url 你的ssr订阅链接<br>    <span class="hljs-comment"># 更新订阅</span><br>    shadowsocksr-cli -u<br>    <span class="hljs-comment"># 启动</span><br>    shadowsocksr-cli --fast-node<br><br>3. 修改`EFB`配置<br><br>    编辑`./TG-EFB-QQ-Docker/efb/profile/default/blueset.telegram/config.yaml`，添加代理<br><br>    ```yaml<br>    token: xxx:xxx<br>    admins:<br>    - xxxxxxxx<br>    <span class="hljs-comment"># 添加下面的两行</span><br>    request_kwargs:<br>        proxy_url: socks5h://127.0.0.1:1080/<br></code></pre></td></tr></table></figure></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">    <span class="hljs-comment"># 添加订阅链接</span><br>    shadowsocksr-cli --add-url 你的ssr订阅链接<br>    <span class="hljs-comment"># 更新订阅</span><br>    shadowsocksr-cli -u<br>    <span class="hljs-comment"># 启动</span><br>    shadowsocksr-cli --fast-node<br><br>3. 修改`EFB`配置<br><br>    编辑`./TG-EFB-QQ-Docker/efb/profile/default/blueset.telegram/config.yaml`，添加代理<br><br>    ```yaml<br>    token: xxx:xxx<br>    admins:<br>    - xxxxxxxx<br>    <span class="hljs-comment"># 添加下面的两行</span><br>    request_kwargs:<br>        proxy_url: socks5h://127.0.0.1:1080/<br></code></pre></td></tr></table></figure>
+</li>
 <li><p>重启</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose down<br>docker-compose up -d<br></code></pre></td></tr></table></figure></li>
 </ol>

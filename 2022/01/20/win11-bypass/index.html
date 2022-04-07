@@ -77,7 +77,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -215,7 +215,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      328 字
+      333 字
     </span>
   
 
@@ -256,17 +256,21 @@
             <h1 style="display: none">手动绕过 Windows 11 安装硬件限制</h1>
             
             <div class="markdown-body">
-              <p>绕过使用原版 Windows 11 镜像安装时的硬件要求（TPM/SecureBoot）</p>
+              <p>绕过使用原版 Windows 11 镜像安装时的硬件要求（TPM&#x2F;SecureBoot）</p>
 <span id="more"></span>
 
 <h3 id="使用-Windows-镜像启动"><a href="#使用-Windows-镜像启动" class="headerlink" title="使用 Windows 镜像启动"></a>使用 Windows 镜像启动</h3><p>   U盘写入镜像或虚拟机挂载镜像启动</p>
 <h3 id="打开命令提示符"><a href="#打开命令提示符" class="headerlink" title="打开命令提示符"></a>打开命令提示符</h3><p>   在 Windows 安装程序的语言选择界面，按下 <code>Shift+F10</code> 打开 CMD 窗口</p>
 <p>   <img src="/img/posts/win11-bypass-2.webp" srcset="/img/loading.gif" lazyload></p>
 <h3 id="编辑注册表"><a href="#编辑注册表" class="headerlink" title="编辑注册表"></a>编辑注册表</h3><ol>
-<li>在 CMD 中输入 <code>regedit</code> 打开注册表编辑器</li>
-<li>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code></li>
-<li>右键 <code>Setup</code> 选择 <code>新建-项</code>，重命名为 <code>LabConfig</code></li>
-<li>点击 <code>LabConfig</code>，在右面的窗口右键新建一共三个 <code>DWORD（32位）值</code>，重命名如下，并将他们的数值数据改为 <code>1</code></li>
+<li><p>在 CMD 中输入 <code>regedit</code> 打开注册表编辑器</p>
+</li>
+<li><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code></p>
+</li>
+<li><p>右键 <code>Setup</code> 选择 <code>新建-项</code>，重命名为 <code>LabConfig</code></p>
+</li>
+<li><p>点击 <code>LabConfig</code>，在右面的窗口右键新建一共三个 <code>DWORD（32位）值</code>，重命名如下，并将他们的数值数据改为 <code>1</code></p>
+</li>
 </ol>
 <div class="code-wrapper"><pre><code class="hljs">- BypassTPMCheck
 

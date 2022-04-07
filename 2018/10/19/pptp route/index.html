@@ -74,7 +74,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 
 <body>
@@ -263,7 +263,7 @@
 
 <p>把<code>pptp-vpn0</code>修改为自己想要的接口名。</p>
 <p>比如我现在需要在<code>pptp-vpn0</code>断开后自动添加192.168.0.1为默认路由，则设置如下</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifdown&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;virtual**&quot;</span> ]<br>then<br><span class="hljs-built_in"></span><br><span class="hljs-built_in">route </span><span class="hljs-builtin-name">add</span><span class="hljs-built_in"> default </span>gw 192.168.0.1<br><br>fi<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifdown&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;virtual**&quot;</span> ]<br>then<br><span class="hljs-built_in"></span><br><span class="hljs-built_in">route </span><span class="hljs-built_in">add</span><span class="hljs-built_in"> default </span>gw 192.168.0.1<br><br>fi<br></code></pre></td></tr></table></figure>
 
 
 <p>加入了一行<code>route add default gw 192.168.0.1</code></p>
