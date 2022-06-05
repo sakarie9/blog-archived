@@ -29,30 +29,25 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+  
   <title>poj1328 雷达安装 - Sakari&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
-    
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -61,7 +56,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="//at.alicdn.com/t/font_2409048_7afzs9gq44v.css">
@@ -70,16 +71,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.1.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Sakari&#39;s Blog</strong>
@@ -173,6 +187,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -185,57 +200,71 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="poj1328 雷达安装">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2018-05-07 20:05" pubdate>
-        2018年5月7日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      2k 字
-    </span>
   
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      7 分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="poj1328 雷达安装"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2018-05-07 20:05" pubdate>
+          2018年5月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -244,15 +273,20 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">poj1328 雷达安装</h1>
             
             <div class="markdown-body">
+              
               <p>雷达安装</p>
 <p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=1328">poj1328</a></p>
 <p>以岛屿为圆心，雷达范围为半径，计算此圆与x轴交点的线段，以此把所有岛屿的区间计算出来。</p>
@@ -262,35 +296,88 @@
 <p>注意输出格式以及Case的C要大写&#x3D; &#x3D;</p>
 <span id="more"></span>
 
-<figure class="highlight cpp"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></div></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;stdafx.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">radarRange</span> &#123;<br>	<span class="hljs-type">double</span> left;<br>	<span class="hljs-type">double</span> right;<br>	<span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-type">const</span> radarRange &amp;x) <span class="hljs-type">const</span> <span class="hljs-comment">//&lt;重载，用于sort函数</span><br>	&#123;<br>		<span class="hljs-keyword">if</span> (right != x.right) <span class="hljs-keyword">return</span> right &lt; x.right;<br>		<span class="hljs-keyword">return</span> left &lt; x.left;<br>	&#125;<br>&#125;;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">islandPosition</span> &#123;<br>	<span class="hljs-type">int</span> x;<br>	<span class="hljs-type">int</span> y;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">radar</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> n, d;<br>	cin &gt;&gt; n &gt;&gt; d;<br>	<span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span> &amp;&amp; d == <span class="hljs-number">0</span>)<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">-2</span>;<br><br>	islandPosition *p = <span class="hljs-keyword">new</span> islandPosition[n];<br>	radarRange *r = <span class="hljs-keyword">new</span> radarRange[n];<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>	&#123;<br>		cin &gt;&gt; p[i].x &gt;&gt; p[i].y;<br>	&#125;<br><br>	<span class="hljs-keyword">if</span> (d == <span class="hljs-number">0</span>)<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>		<span class="hljs-keyword">if</span> (p[i].y &gt; d)<br>		&#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>		&#125;<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<span class="hljs-comment">//计算雷达安装范围</span><br>	&#123;<br>		<span class="hljs-type">double</span> tmp = <span class="hljs-built_in">sqrt</span>(<span class="hljs-built_in">double</span>(d *d) - <span class="hljs-built_in">double</span>(p[i].y * p[i].y));<br>		r[i].left = p[i].x - tmp;<br>		r[i].right = p[i].x + tmp;<br>	&#125;<br><br>	<span class="hljs-comment">//for (int i = 0; i &lt; n; i++)//debug</span><br>	<span class="hljs-comment">//&#123;</span><br>	<span class="hljs-comment">//	cout &lt;&lt; r[i].left &lt;&lt; &#x27; &#x27; &lt;&lt; r[i].right &lt;&lt; endl;</span><br>	<span class="hljs-comment">//&#125;</span><br>	<span class="hljs-built_in">sort</span>(r, r + n);<br>	<span class="hljs-comment">//for (int i = 0; i &lt; n; i++)//debug</span><br>	<span class="hljs-comment">//&#123;</span><br>	<span class="hljs-comment">//	cout &lt;&lt; r[i].left &lt;&lt; &#x27; &#x27; &lt;&lt; r[i].right &lt;&lt; endl;</span><br>	<span class="hljs-comment">//&#125;</span><br>	<span class="hljs-type">double</span> start, end;<br>	<span class="hljs-type">int</span> sum = <span class="hljs-number">1</span>;<br>	start = r[<span class="hljs-number">0</span>].left;<br>	end = r[<span class="hljs-number">0</span>].right;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<span class="hljs-comment">//计算所需雷达数</span><br>	&#123;<br>		<span class="hljs-keyword">if</span> (r[i].left &lt;= end &amp;&amp; r[i].left &gt;= start)<br>		&#123;<br>			start = r[i].left;<br>		&#125;<br>		<span class="hljs-comment">/*if (r[i].left &lt;= end &amp;&amp; r[i].left &lt; start)</span><br><span class="hljs-comment">		&#123;</span><br><span class="hljs-comment">			;</span><br><span class="hljs-comment">		&#125;*/</span><br>		<span class="hljs-keyword">if</span> (r[i].left &gt; end)<br>		&#123;<br>			start = r[i].left;<br>			end = r[i].right;<br>			sum++;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">delete</span>[] p; <span class="hljs-keyword">delete</span>[] r;<br>	<span class="hljs-keyword">return</span> sum;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> tmp;<br>	<span class="hljs-type">int</span> sum = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)<br>	&#123;<br>		tmp = <span class="hljs-built_in">radar</span>();<br>		<span class="hljs-keyword">if</span> (tmp == <span class="hljs-number">-2</span>) <span class="hljs-keyword">break</span>;<br>		cout &lt;&lt; <span class="hljs-string">&quot;Case &quot;</span> &lt;&lt; sum++ &lt;&lt; <span class="hljs-string">&quot;: &quot;</span> &lt;&lt; tmp &lt;&lt; endl;<br>	&#125;<br><br>	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);<br>&#125;<br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Sample Input</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">3 2</span><br><span class="hljs-comment">1 2</span><br><span class="hljs-comment">-3 1</span><br><span class="hljs-comment">2 1</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">1 2</span><br><span class="hljs-comment">0 2</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">0 0</span><br><span class="hljs-comment">Sample Output</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">Case 1: 2</span><br><span class="hljs-comment">Case 2: 1</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;stdafx.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">radarRange</span> &#123;<br>	<span class="hljs-type">double</span> left;<br>	<span class="hljs-type">double</span> right;<br>	<span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-type">const</span> radarRange &amp;x) <span class="hljs-type">const</span> <span class="hljs-comment">//&lt;重载，用于sort函数</span><br>	&#123;<br>		<span class="hljs-keyword">if</span> (right != x.right) <span class="hljs-keyword">return</span> right &lt; x.right;<br>		<span class="hljs-keyword">return</span> left &lt; x.left;<br>	&#125;<br>&#125;;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">islandPosition</span> &#123;<br>	<span class="hljs-type">int</span> x;<br>	<span class="hljs-type">int</span> y;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">radar</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> n, d;<br>	cin &gt;&gt; n &gt;&gt; d;<br>	<span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span> &amp;&amp; d == <span class="hljs-number">0</span>)<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">-2</span>;<br><br>	islandPosition *p = <span class="hljs-keyword">new</span> islandPosition[n];<br>	radarRange *r = <span class="hljs-keyword">new</span> radarRange[n];<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>	&#123;<br>		cin &gt;&gt; p[i].x &gt;&gt; p[i].y;<br>	&#125;<br><br>	<span class="hljs-keyword">if</span> (d == <span class="hljs-number">0</span>)<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>		<span class="hljs-keyword">if</span> (p[i].y &gt; d)<br>		&#123;<br>			<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>		&#125;<br><br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<span class="hljs-comment">//计算雷达安装范围</span><br>	&#123;<br>		<span class="hljs-type">double</span> tmp = <span class="hljs-built_in">sqrt</span>(<span class="hljs-built_in">double</span>(d *d) - <span class="hljs-built_in">double</span>(p[i].y * p[i].y));<br>		r[i].left = p[i].x - tmp;<br>		r[i].right = p[i].x + tmp;<br>	&#125;<br><br>	<span class="hljs-comment">//for (int i = 0; i &lt; n; i++)//debug</span><br>	<span class="hljs-comment">//&#123;</span><br>	<span class="hljs-comment">//	cout &lt;&lt; r[i].left &lt;&lt; &#x27; &#x27; &lt;&lt; r[i].right &lt;&lt; endl;</span><br>	<span class="hljs-comment">//&#125;</span><br>	<span class="hljs-built_in">sort</span>(r, r + n);<br>	<span class="hljs-comment">//for (int i = 0; i &lt; n; i++)//debug</span><br>	<span class="hljs-comment">//&#123;</span><br>	<span class="hljs-comment">//	cout &lt;&lt; r[i].left &lt;&lt; &#x27; &#x27; &lt;&lt; r[i].right &lt;&lt; endl;</span><br>	<span class="hljs-comment">//&#125;</span><br>	<span class="hljs-type">double</span> start, end;<br>	<span class="hljs-type">int</span> sum = <span class="hljs-number">1</span>;<br>	start = r[<span class="hljs-number">0</span>].left;<br>	end = r[<span class="hljs-number">0</span>].right;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<span class="hljs-comment">//计算所需雷达数</span><br>	&#123;<br>		<span class="hljs-keyword">if</span> (r[i].left &lt;= end &amp;&amp; r[i].left &gt;= start)<br>		&#123;<br>			start = r[i].left;<br>		&#125;<br>		<span class="hljs-comment">/*if (r[i].left &lt;= end &amp;&amp; r[i].left &lt; start)</span><br><span class="hljs-comment">		&#123;</span><br><span class="hljs-comment">			;</span><br><span class="hljs-comment">		&#125;*/</span><br>		<span class="hljs-keyword">if</span> (r[i].left &gt; end)<br>		&#123;<br>			start = r[i].left;<br>			end = r[i].right;<br>			sum++;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">delete</span>[] p; <span class="hljs-keyword">delete</span>[] r;<br>	<span class="hljs-keyword">return</span> sum;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> tmp;<br>	<span class="hljs-type">int</span> sum = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)<br>	&#123;<br>		tmp = <span class="hljs-built_in">radar</span>();<br>		<span class="hljs-keyword">if</span> (tmp == <span class="hljs-number">-2</span>) <span class="hljs-keyword">break</span>;<br>		cout &lt;&lt; <span class="hljs-string">&quot;Case &quot;</span> &lt;&lt; sum++ &lt;&lt; <span class="hljs-string">&quot;: &quot;</span> &lt;&lt; tmp &lt;&lt; endl;<br>	&#125;<br><br>	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);<br>&#125;<br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Sample Input</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">3 2</span><br><span class="hljs-comment">1 2</span><br><span class="hljs-comment">-3 1</span><br><span class="hljs-comment">2 1</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">1 2</span><br><span class="hljs-comment">0 2</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">0 0</span><br><span class="hljs-comment">Sample Output</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">Case 1: 2</span><br><span class="hljs-comment">Case 2: 1</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
 
+              
             </div>
-            <hr>
+            <hr/>
             <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/OJ/">OJ</a>
-                    
-                  </div>
-                
-                
-              </div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/OJ/" class="category-chain-item">OJ</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>poj1328 雷达安装</div>
+      <div>http://example.com/2018/05/07/1328/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Sakari</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2018年5月7日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2018/06/05/zznuoj%202113/">
+                      <a href="/2018/06/05/zznuoj%202113/" title="Image Recognition">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Image Recognition</span>
                         <span class="visible-mobile">上一篇</span>
@@ -300,7 +387,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2018/04/21/1458/">
+                      <a href="/2018/04/21/1458/" title="poj1458 最长公共子序列长度">
                         <span class="hidden-mobile">poj1458 最长公共子序列长度</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -312,23 +399,94 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"xzsk2/xzsk2.github.io","repo-id":"MDEwOlJlcG9zaXRvcnkxMjcwNzY0ODU=","category":"Announcements","category-id":"DIC_kwDOB5MIhc4CPeU0","theme-light":"light_tritanopia","theme-dark":"transparent_dark","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","input-position":"top","lang":"zh-CN","loading":null};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light_tritanopia';
+        var dark = 'transparent_dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
           </article>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
 
 
     
@@ -353,32 +511,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> Hosted by <a href="https://github.com" target="_blank" rel="nofollow noopener"><span>Github Pages</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> Hosted by <a href="https://github.com" target="_blank" rel="nofollow noopener"><span>Github Pages</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -397,59 +557,21 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
-
-
-
-
-
-
-
-
 
 
 
@@ -459,12 +581,15 @@
   
     <!-- Google Analytics -->
     <script defer>
-      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
-      ga.l = +new Date;
-      ga('create', 'UA-191721829-1', 'auto');
-      ga('send', 'pageview');
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'UA-191721829-1', 'auto');
+          ga('send', 'pageview');
+        });
+      }
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
   
 
   
@@ -475,13 +600,164 @@
 
   
 
+  
 
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

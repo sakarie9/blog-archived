@@ -25,15 +25,19 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+  
   <title>Sakari&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -42,7 +46,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="//at.alicdn.com/t/font_2409048_7afzs9gq44v.css">
@@ -51,16 +61,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.1.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Sakari&#39;s Blog</strong>
@@ -154,6 +177,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -166,34 +190,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.webp') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo AAE-O-A-A-U-U-A- E-eee-ee-eee AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo EEEEO-A-AAA-AAAA">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo AAE-O-A-A-U-U-A- E-eee-ee-eee AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo EEEEO-A-AAA-AAAA"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -218,12 +248,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/01/20/win11-bypass/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2022/01/20/win11-bypass/" target="_self">
+        <div>
           绕过使用原版 Windows 11 镜像安装时的硬件要求（TPM&#x2F;SecureBoot）
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -235,18 +265,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Windows/">Windows</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Windows/" class="category-chain-item">Windows</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Windows/">Windows</a>
+              <a href="/tags/Windows/">#Windows</a>
             
           </div>
         
@@ -271,12 +315,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/11/15/tg-qq-gocq/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2021/11/15/tg-qq-gocq/" target="_self">
+        <div>
           使用 Bot 在 Telegram 及 QQ 间转发消息，基本可以做到去 QQ 化，仅在 Telegram 上与 QQ 好友&#x2F;群组互动
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -288,24 +332,38 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Linux/">Linux</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Linux/">Linux</a>
+              <a href="/tags/Linux/">#Linux</a>
             
-              <a href="/tags/Docker/">Docker</a>
+              <a href="/tags/Docker/">#Docker</a>
             
-              <a href="/tags/Telegram/">Telegram</a>
+              <a href="/tags/Telegram/">#Telegram</a>
             
-              <a href="/tags/QQ/">QQ</a>
+              <a href="/tags/QQ/">#QQ</a>
             
           </div>
         
@@ -330,12 +388,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/05/08/air-conditioner-room/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2021/05/08/air-conditioner-room/" target="_self">
+        <div>
           云空调，便携小空调，为你的夏日带去清凉！
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -369,12 +427,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/05/05/tg-qq-mirai/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2021/05/05/tg-qq-mirai/" target="_self">
+        <div>
           使用 Bot 在 Telegram 及 QQ 间转发消息，基本可以做到去 QQ 化，仅在 Telegram 上与 QQ 好友&#x2F;群组互动
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -386,24 +444,38 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Linux/">Linux</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Linux/">Linux</a>
+              <a href="/tags/Linux/">#Linux</a>
             
-              <a href="/tags/Docker/">Docker</a>
+              <a href="/tags/Docker/">#Docker</a>
             
-              <a href="/tags/Telegram/">Telegram</a>
+              <a href="/tags/Telegram/">#Telegram</a>
             
-              <a href="/tags/QQ/">QQ</a>
+              <a href="/tags/QQ/">#QQ</a>
             
           </div>
         
@@ -428,12 +500,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/04/03/clash/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2021/04/03/clash/" target="_self">
+        <div>
           症状在使用Chrome+SwitchyOmega+Clash的环境下，SwitchyOmega的“代理”操作会将代理请求发送至Clash，由Clash判断是否使用代理。这样就造成了用户想要某个域名走代理，但是Clash规则中默认该域名直连，最终还是直连的情况。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -445,22 +517,36 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Windows/">Windows</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Windows/" class="category-chain-item">Windows</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Windows/">Windows</a>
+              <a href="/tags/Windows/">#Windows</a>
             
-              <a href="/tags/Clash/">Clash</a>
+              <a href="/tags/Clash/">#Clash</a>
             
-              <a href="/tags/Chrome/">Chrome</a>
+              <a href="/tags/Chrome/">#Chrome</a>
             
           </div>
         
@@ -485,12 +571,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/03/22/ts/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2021/03/22/ts/" target="_self">
+        <div>
           ts文件卡死是怎么回事呢？ts文件相信大家都很熟悉，但是卡死是怎么回事呢？下面就让小编带大家一起了解吧。ts文件卡死，其实就是卡死了。那么ts文件为什么会卡死，相信大家都很好奇是怎么回事。大家可能会感到很惊讶，ts文件怎么会卡死呢？但事实就是这样，小编也感到非常惊讶。那么这就是关于ts文件卡死的事情了，大家有没有觉得很神奇呢？看了今天的内容，大家有什么想法呢？欢迎在评论区告诉小编一起讨论哦。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -502,20 +588,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Windows/">Windows</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Windows/" class="category-chain-item">Windows</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Windows/">Windows</a>
+              <a href="/tags/Windows/">#Windows</a>
             
-              <a href="/tags/Media/">Media</a>
+              <a href="/tags/Media/">#Media</a>
             
           </div>
         
@@ -540,12 +640,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/03/17/proxy/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2021/03/17/proxy/" target="_self">
+        <div>
           PowerShell1. 在 PowerShell 窗口中运行如下指令12if (!(Test-Path -Path $PROFILE )) &amp;#123; New-Item -Type File -Path $PROFILE -Force &amp;#125;notepad $PROFILE  2. 在打开的记事本中添加如下代码注意修改第九行代理地址 123456789101112131415161718
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -557,26 +657,40 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Windows/">Windows</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Windows/" class="category-chain-item">Windows</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Windows/">Windows</a>
+              <a href="/tags/Windows/">#Windows</a>
             
-              <a href="/tags/Proxy/">Proxy</a>
+              <a href="/tags/Proxy/">#Proxy</a>
             
-              <a href="/tags/PowerShell/">PowerShell</a>
+              <a href="/tags/PowerShell/">#PowerShell</a>
             
-              <a href="/tags/CMD/">CMD</a>
+              <a href="/tags/CMD/">#CMD</a>
             
-              <a href="/tags/Git/">Git</a>
+              <a href="/tags/Git/">#Git</a>
             
           </div>
         
@@ -601,12 +715,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2018/10/19/pptp%20route/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2018/10/19/pptp%20route/" target="_self">
+        <div>
           测试平台：Openwrt 在&#x2F;etc&#x2F;hotplug.d&#x2F;iface&#x2F;下添加30-routes文件,系统将在接口状态发生生变化时执行该脚本。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -618,11 +732,25 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Router/">Router</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Router/" class="category-chain-item">Router</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
@@ -647,12 +775,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2018/06/05/zznuoj%202113/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2018/06/05/zznuoj%202113/" target="_self">
+        <div>
           第十一届河南省ACM程序设计竞赛 I题
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -664,11 +792,25 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/OJ/">OJ</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/OJ/" class="category-chain-item">OJ</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
@@ -693,12 +835,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2018/05/07/1328/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/2018/05/07/1328/" target="_self">
+        <div>
           雷达安装 poj1328 以岛屿为圆心，雷达范围为半径，计算此圆与x轴交点的线段，以此把所有岛屿的区间计算出来。 因此，这道题就变成了在数轴上选最少的点，覆盖给定线段。 把每条线段以右端点排序，然后进行选择即可。 sqrt函数使用时要保证数据类型一致。 注意输出格式以及Case的C要大写&#x3D; &#x3D;
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -710,11 +852,25 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/OJ/">OJ</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/OJ/" class="category-chain-item">OJ</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
@@ -759,32 +915,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> Hosted by <a href="https://github.com" target="_blank" rel="nofollow noopener"><span>Github Pages</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> Hosted by <a href="https://github.com" target="_blank" rel="nofollow noopener"><span>Github Pages</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -803,46 +961,21 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-
-
-
-
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
-
-
-
-
-
-
-
-
 
 
 
@@ -852,12 +985,15 @@
   
     <!-- Google Analytics -->
     <script defer>
-      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
-      ga.l = +new Date;
-      ga('create', 'UA-191721829-1', 'auto');
-      ga('send', 'pageview');
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'UA-191721829-1', 'auto');
+          ga('send', 'pageview');
+        });
+      }
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
   
 
   
@@ -868,13 +1004,33 @@
 
   
 
+  
 
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

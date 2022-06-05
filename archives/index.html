@@ -25,15 +25,19 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+  
   <title>归档 - Sakari&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -42,7 +46,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="//at.alicdn.com/t/font_2409048_7afzs9gq44v.css">
@@ -51,16 +61,29 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.1.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
-  <header style="height: 60vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Sakari&#39;s Blog</strong>
@@ -154,6 +177,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -166,29 +190,35 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="归档"></span>
           
         </div>
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
+        <div id="board"
           >
           
           <div class="container">
@@ -206,8 +236,8 @@
       <p class="h5">2022</p>
     
     <a href="/2022/01/20/win11-bypass/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">手动绕过 Windows 11 安装硬件限制</span>
-      <time style="float: right;">01-20</time>
+      <time>01-20</time>
+      <div class="list-group-item-title">手动绕过 Windows 11 安装硬件限制</div>
     </a>
   
     
@@ -215,38 +245,38 @@
       <p class="h5">2021</p>
     
     <a href="/2021/11/15/tg-qq-gocq/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程</span>
-      <time style="float: right;">11-15</time>
+      <time>11-15</time>
+      <div class="list-group-item-title">Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程</div>
     </a>
   
     
     <a href="/2021/05/08/air-conditioner-room/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">空调房</span>
-      <time style="float: right;">05-08</time>
+      <time>05-08</time>
+      <div class="list-group-item-title">空调房</div>
     </a>
   
     
     <a href="/2021/05/05/tg-qq-mirai/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">（旧）Telegram收发QQ信息-EFB和Mirai的Docker部署教程</span>
-      <time style="float: right;">05-05</time>
+      <time>05-05</time>
+      <div class="list-group-item-title">（旧）Telegram收发QQ信息-EFB和Mirai的Docker部署教程</div>
     </a>
   
     
     <a href="/2021/04/03/clash/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Chrome+SwitchyOmega+Clash的处理</span>
-      <time style="float: right;">04-03</time>
+      <time>04-03</time>
+      <div class="list-group-item-title">Chrome+SwitchyOmega+Clash的处理</div>
     </a>
   
     
     <a href="/2021/03/22/ts/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Windows10 右键 ts 文件卡死</span>
-      <time style="float: right;">03-22</time>
+      <time>03-22</time>
+      <div class="list-group-item-title">Windows10 右键 ts 文件卡死</div>
     </a>
   
     
     <a href="/2021/03/17/proxy/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Windows下为PowerShell/CMD/Git设置代理</span>
-      <time style="float: right;">03-17</time>
+      <time>03-17</time>
+      <div class="list-group-item-title">Windows下为PowerShell/CMD/Git设置代理</div>
     </a>
   
     
@@ -254,20 +284,20 @@
       <p class="h5">2018</p>
     
     <a href="/2018/10/19/pptp%20route/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">如何让pptp连接/断开后自动添加路由</span>
-      <time style="float: right;">10-19</time>
+      <time>10-19</time>
+      <div class="list-group-item-title">如何让pptp连接/断开后自动添加路由</div>
     </a>
   
     
     <a href="/2018/06/05/zznuoj%202113/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Image Recognition</span>
-      <time style="float: right;">06-05</time>
+      <time>06-05</time>
+      <div class="list-group-item-title">Image Recognition</div>
     </a>
   
     
     <a href="/2018/05/07/1328/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">poj1328 雷达安装</span>
-      <time style="float: right;">05-07</time>
+      <time>05-07</time>
+      <div class="list-group-item-title">poj1328 雷达安装</div>
     </a>
   
 </div>
@@ -309,32 +339,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> Hosted by <a href="https://github.com" target="_blank" rel="nofollow noopener"><span>Github Pages</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> Hosted by <a href="https://github.com" target="_blank" rel="nofollow noopener"><span>Github Pages</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -353,46 +385,21 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-
-
-
-
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
-
-
-
-
-
-
-
-
 
 
 
@@ -402,12 +409,15 @@
   
     <!-- Google Analytics -->
     <script defer>
-      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
-      ga.l = +new Date;
-      ga('create', 'UA-191721829-1', 'auto');
-      ga('send', 'pageview');
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
+          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', 'UA-191721829-1', 'auto');
+          ga('send', 'pageview');
+        });
+      }
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
   
 
   
@@ -418,13 +428,33 @@
 
   
 
+  
 
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
