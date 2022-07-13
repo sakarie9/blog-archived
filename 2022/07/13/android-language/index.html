@@ -16,24 +16,24 @@
   <meta name="author" content="Sakari">
   <meta name="keywords" content="">
   
-    <meta name="description" content="绕过使用原版 Windows 11 镜像安装时的硬件要求（TPM&#x2F;SecureBoot）">
+    <meta name="description" content="使用 ADB 开启 Lawnchair 应用抽屉的中英混排 无需root">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手动绕过 Windows 11 安装硬件限制">
-<meta property="og:url" content="http://example.com/2022/01/20/win11-bypass/index.html">
+<meta property="og:title" content="Lawnchair 应用抽屉中英混排">
+<meta property="og:url" content="http://example.com/2022/07/13/android-language/index.html">
 <meta property="og:site_name" content="Sakari&#39;s Blog">
-<meta property="og:description" content="绕过使用原版 Windows 11 镜像安装时的硬件要求（TPM&#x2F;SecureBoot）">
+<meta property="og:description" content="使用 ADB 开启 Lawnchair 应用抽屉的中英混排 无需root">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/posts/win11-bypass-1.webp">
-<meta property="article:published_time" content="2022-01-20T04:54:34.000Z">
-<meta property="article:modified_time" content="2022-01-20T05:40:22.028Z">
+<meta property="og:image" content="http://example.com/img/posts/android-language-1.webp">
+<meta property="article:published_time" content="2022-07-13T03:45:14.000Z">
+<meta property="article:modified_time" content="2022-07-13T05:34:35.735Z">
 <meta property="article:author" content="Sakari">
-<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/posts/win11-bypass-1.webp">
+<meta name="twitter:image" content="http://example.com/img/posts/android-language-1.webp">
   
   
   
-  <title>手动绕过 Windows 11 安装硬件限制 - Sakari&#39;s Blog</title>
+  <title>Lawnchair 应用抽屉中英混排 - Sakari&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -235,13 +235,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/posts/win11-bypass-1.webp') no-repeat center center; background-size: cover;">
+     style="background: url('/img/posts/android-language-1.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="手动绕过 Windows 11 安装硬件限制"></span>
+            <span id="subtitle" data-typed-text="Lawnchair 应用抽屉中英混排"></span>
           
         </div>
 
@@ -252,8 +252,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-01-20 12:54" pubdate>
-          2022年1月20日 下午
+        <time datetime="2022-07-13 11:45" pubdate>
+          2022年7月13日 中午
         </time>
       </span>
     
@@ -265,7 +265,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          333 字
+          312 字
         
       </span>
     
@@ -277,7 +277,7 @@
         
         
           <!-- compatible with older versions-->
-          2 分钟
+          1 分钟
         
       </span>
     
@@ -315,38 +315,22 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">手动绕过 Windows 11 安装硬件限制</h1>
+            <h1 style="display: none">Lawnchair 应用抽屉中英混排</h1>
             
             
               <div class="markdown-body">
                 
-                <p>绕过使用原版 Windows 11 镜像安装时的硬件要求（TPM&#x2F;SecureBoot）</p>
+                <p>使用 ADB 开启 Lawnchair 应用抽屉的中英混排 无需root</p>
 <span id="more"></span>
 
-<h3 id="使用-Windows-镜像启动"><a href="#使用-Windows-镜像启动" class="headerlink" title="使用 Windows 镜像启动"></a>使用 Windows 镜像启动</h3><p>   U盘写入镜像或虚拟机挂载镜像启动</p>
-<h3 id="打开命令提示符"><a href="#打开命令提示符" class="headerlink" title="打开命令提示符"></a>打开命令提示符</h3><p>   在 Windows 安装程序的语言选择界面，按下 <code>Shift+F10</code> 打开 CMD 窗口</p>
-<p>   <img src="/img/posts/win11-bypass-2.webp" srcset="/img/loading.gif" lazyload></p>
-<h3 id="编辑注册表"><a href="#编辑注册表" class="headerlink" title="编辑注册表"></a>编辑注册表</h3><ol>
-<li><p>在 CMD 中输入 <code>regedit</code> 打开注册表编辑器</p>
-</li>
-<li><p>进入 <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code></p>
-</li>
-<li><p>右键 <code>Setup</code> 选择 <code>新建-项</code>，重命名为 <code>LabConfig</code></p>
-</li>
-<li><p>点击 <code>LabConfig</code>，在右面的窗口右键新建一共三个 <code>DWORD（32位）值</code>，重命名如下，并将他们的数值数据改为 <code>1</code></p>
-</li>
-</ol>
-<pre><code class="hljs">- BypassTPMCheck
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在类原生系统的初次开机设置时，如果检测到国内SIM卡，系统会自动将语言切换成 <code>中文（中国）</code> ，而这个语言在系统的 <code>添加语言</code> 列表里面是没有的，你只能找到 <code>简体中文（中国）</code></p>
+<p><img src="/img/posts/android-language-1.webp" srcset="/img/loading.gif" lazyload></p>
+<p>类原生自带的启动器（QuickStep、Lawnchair 等）在 <code>简体中文（中国）</code> 下，应用抽屉会按照中文在前，英文在后（或者反过来）的方式排序，并且缺少相关的设置项；而在 <code>中文（中国）</code> 下，这些启动器可以正常按照中文拼音首字母进行中英混排</p>
+<p><img src="/img/posts/android-language-2.webp" srcset="/img/loading.gif" lazyload title="简体中文（中国）&nbsp;|&nbsp;&nbsp;中文（中国）"></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>手机连接电脑开启USB调试，输入</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">adb <span class="hljs-built_in">shell</span> settings <span class="hljs-built_in">put</span> <span class="hljs-keyword">system</span> system_locales zh-CN,zh-Hans-CN<br></code></pre></td></tr></table></figure>
 
-- BypassRAMCheck
-
-- BypassSecureBootCheck
-</code></pre>
-<p>   <img src="/img/posts/win11-bypass-3.webp" srcset="/img/loading.gif" lazyload></p>
-<ol start="5">
-<li>关闭 CMD 和 注册表编辑器</li>
-</ol>
-<h3 id="继续安装系统"><a href="#继续安装系统" class="headerlink" title="继续安装系统"></a>继续安装系统</h3><p>   <img src="/img/posts/win11-bypass-4.webp" srcset="/img/loading.gif" lazyload></p>
+<p>重启，完成</p>
 
                 
               </div>
@@ -365,7 +349,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Windows/" class="category-chain-item">Windows</a>
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
   
   
 
@@ -380,7 +364,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Windows/">#Windows</a>
+        <a href="/tags/Android/">#Android</a>
       
     </div>
   
@@ -392,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>手动绕过 Windows 11 安装硬件限制</div>
-      <div>http://example.com/2022/01/20/win11-bypass/</div>
+      <div>Lawnchair 应用抽屉中英混排</div>
+      <div>http://example.com/2022/07/13/android-language/</div>
     </div>
     <div class="license-meta">
       
@@ -405,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年1月20日</div>
+          <div>2022年7月13日</div>
         </div>
       
       
@@ -435,18 +419,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/13/android-language/" title="Lawnchair 应用抽屉中英混排">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Lawnchair 应用抽屉中英混排</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/15/tg-qq-gocq/" title="Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程">
-                        <span class="hidden-mobile">Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程</span>
+                      <a href="/2022/01/20/win11-bypass/" title="手动绕过 Windows 11 安装硬件限制">
+                        <span class="hidden-mobile">手动绕过 Windows 11 安装硬件限制</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
