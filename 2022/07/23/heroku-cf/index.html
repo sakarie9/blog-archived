@@ -16,16 +16,16 @@
   <meta name="author" content="Sakari">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Heroku 的免费方案下，单个用户所有 app 每月的总运行时长不超过550小时，且不能绑定自己的域名，如果需要全天在线需要绑定银行卡，对于白嫖用户相当不友好。但是我们可以给 Heroku 套上一层 Cloudflare 来实现全月在线和域名绑定">
+    <meta name="description" content="2022&#x2F;12&#x2F;28, Heroku 将结束免费方案，此教程同步作废">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Heroku+Cloudflare 免费账号实现24&#x2F;7在线及域名绑定">
 <meta property="og:url" content="http://example.com/2022/07/23/heroku-cf/index.html">
 <meta property="og:site_name" content="Sakari&#39;s Blog">
-<meta property="og:description" content="Heroku 的免费方案下，单个用户所有 app 每月的总运行时长不超过550小时，且不能绑定自己的域名，如果需要全天在线需要绑定银行卡，对于白嫖用户相当不友好。但是我们可以给 Heroku 套上一层 Cloudflare 来实现全月在线和域名绑定">
+<meta property="og:description" content="2022&#x2F;12&#x2F;28, Heroku 将结束免费方案，此教程同步作废">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/posts/heroku-cf.webp">
 <meta property="article:published_time" content="2022-07-23T03:45:14.000Z">
-<meta property="article:modified_time" content="2022-07-23T09:35:34.203Z">
+<meta property="article:modified_time" content="2022-09-05T08:44:31.464Z">
 <meta property="article:author" content="Sakari">
 <meta property="article:tag" content="Heroku">
 <meta property="article:tag" content="Cloudflare">
@@ -309,9 +309,12 @@
             
               <div class="markdown-body">
                 
-                <p>Heroku 的免费方案下，单个用户所有 app 每月的总运行时长不超过550小时，且不能绑定自己的域名，如果需要全天在线需要绑定银行卡，对于白嫖用户相当不友好。但是我们可以给 Heroku 套上一层 Cloudflare 来实现全月在线和域名绑定</p>
+                <blockquote>
+<p><strong>2022&#x2F;12&#x2F;28, Heroku 将结束免费方案，此教程同步作废</strong></p>
+</blockquote>
 <span id="more"></span>
 
+<p>Heroku 的免费方案下，单个用户所有 app 每月的总运行时长不超过550小时，且不能绑定自己的域名，如果需要全天在线需要绑定银行卡，对于白嫖用户相当不友好。但是我们可以给 Heroku 套上一层 Cloudflare 来实现全月在线和域名绑定</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>使用 Cloudflare Workers 对 Heroku 进行反代并手动实现简单的负载均衡</p>
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
 <li>一个使用 Cloudflare 进行域名解析的域名</li>
