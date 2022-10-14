@@ -16,25 +16,25 @@
   <meta name="author" content="Sakari">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2022&#x2F;12&#x2F;28, Heroku 将结束免费方案，此教程同步作废">
+    <meta name="description" content="在 Linux 上 使用 Caddy 原生实现 Steamcommunity 302 的功能并实现开机自启">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Heroku+Cloudflare 免费账号实现24&#x2F;7在线及域名绑定">
-<meta property="og:url" content="http://example.com/2022/07/23/heroku-cf/index.html">
+<meta property="og:title" content="在Linux上使用Caddy反代Steam社区">
+<meta property="og:url" content="http://example.com/2022/10/14/steam-caddy/index.html">
 <meta property="og:site_name" content="Sakari&#39;s Blog">
-<meta property="og:description" content="2022&#x2F;12&#x2F;28, Heroku 将结束免费方案，此教程同步作废">
+<meta property="og:description" content="在 Linux 上 使用 Caddy 原生实现 Steamcommunity 302 的功能并实现开机自启">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/posts/heroku-cf.webp">
-<meta property="article:published_time" content="2022-07-23T03:45:14.000Z">
-<meta property="article:modified_time" content="2022-09-05T08:44:31.464Z">
+<meta property="og:image" content="https://cdn.akamai.steamstatic.com/store/about/social-og.jpg">
+<meta property="article:published_time" content="2022-10-14T07:20:00.000Z">
+<meta property="article:modified_time" content="2022-10-14T08:01:34.202Z">
 <meta property="article:author" content="Sakari">
-<meta property="article:tag" content="Heroku">
-<meta property="article:tag" content="Cloudflare">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Steam">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/posts/heroku-cf.webp">
+<meta name="twitter:image" content="https://cdn.akamai.steamstatic.com/store/about/social-og.jpg">
   
   
   
-  <title>Heroku+Cloudflare 免费账号实现24/7在线及域名绑定 - Sakari&#39;s Blog</title>
+  <title>在Linux上使用Caddy反代Steam社区 - Sakari&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -224,13 +224,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.akamai.steamstatic.com/store/about/social-og.jp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Heroku+Cloudflare 免费账号实现24/7在线及域名绑定"></span>
+            <span id="subtitle" data-typed-text="在Linux上使用Caddy反代Steam社区"></span>
           
         </div>
 
@@ -241,8 +241,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-23 11:45" pubdate>
-          2022年7月23日 中午
+        <time datetime="2022-10-14 15:20" pubdate>
+          2022年10月14日 下午
         </time>
       </span>
     
@@ -254,7 +254,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.2k 字
+          2.7k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
           <!-- compatible with older versions-->
-          4 分钟
+          9 分钟
         
       </span>
     
@@ -304,37 +304,68 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Heroku+Cloudflare 免费账号实现24/7在线及域名绑定</h1>
+            <h1 style="display: none">在Linux上使用Caddy反代Steam社区</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p><strong>2022&#x2F;12&#x2F;28, Heroku 将结束免费方案，此教程同步作废</strong></p>
-</blockquote>
+                <p>在 Linux 上 使用 Caddy 原生实现 <a target="_blank" rel="noopener" href="https://www.dogfight360.com/blog/686/">Steamcommunity 302</a> 的功能并实现开机自启</p>
 <span id="more"></span>
 
-<p>Heroku 的免费方案下，单个用户所有 app 每月的总运行时长不超过550小时，且不能绑定自己的域名，如果需要全天在线需要绑定银行卡，对于白嫖用户相当不友好。但是我们可以给 Heroku 套上一层 Cloudflare 来实现全月在线和域名绑定</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>使用 Cloudflare Workers 对 Heroku 进行反代并手动实现简单的负载均衡</p>
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
-<li>一个使用 Cloudflare 进行域名解析的域名</li>
-<li>两个 Heroku 账户（无需验证信用卡）</li>
+<h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><p>为了生成自定义配置，需要在 Wine 或者 Windows 下运行 Steamcommunity 302，在设置里勾选需要的服务，然后成功启动</p>
+<p>成功启动后在 302 的目录下复制如下几个文件到任意目录，这里假定为 <code>/data/caddy</code>，根据需要自行替换目录</p>
+<blockquote>
+<p>steamcommunity.crt</p>
+<p>steamcommunity.key</p>
+<p>steamcommunity_302.caddy.json</p>
+<p>steamcommunityCA.key</p>
+<p>steamcommunityCA.pem</p>
+</blockquote>
+<p>复制 Steamcommunity 302 设置里的 hosts 到 Linux 的 <code>/etc/hosts</code>，根据反代服务选择不同，hosts 条目也不同，请复制自己设置内的 hosts</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span> steamcommunity.com<br><span class="hljs-number">127.0.0.1</span> www.steamcommunity.com<br><span class="hljs-number">127.0.0.1</span> store.steampowered.com<br><span class="hljs-number">127.0.0.1</span> api.steampowered.com<br><span class="hljs-number">127.0.0.1</span> help.steampowered.com<br><span class="hljs-number">127.0.0.1</span> login.steampowered.com<br><span class="hljs-number">127.0.0.1</span> store.akamai.steamstatic.com<br></code></pre></td></tr></table></figure>
+
+<h3 id="下载-Caddy"><a href="#下载-Caddy" class="headerlink" title="下载 Caddy"></a>下载 Caddy</h3><p>在 <a target="_blank" rel="noopener" href="https://github.com/caddyserver/caddy/releases/tag/v2.5.0-beta.1">caddy&#x2F;release</a> 下载对应平台的 caddy（如 amd64 下载  <code>caddy_2.5.0-beta.1_linux_amd64.tar.gz</code> ）</p>
+<p>解压出来 <code>caddy</code> 二进制文件放入 <code>/data/caddy</code></p>
+<p>此时你的 <code>/data/caddy</code> 文件夹结构应如下</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs stylus">caddy<br>├── caddy<br>├── steamcommunity_302<span class="hljs-selector-class">.caddy</span><span class="hljs-selector-class">.json</span><br>├── steamcommunityCA<span class="hljs-selector-class">.key</span><br>├── steamcommunityCA<span class="hljs-selector-class">.pem</span><br>├── steamcommunity<span class="hljs-selector-class">.crt</span><br>└── steamcommunity.key<br></code></pre></td></tr></table></figure>
+
+<h3 id="编辑配置"><a href="#编辑配置" class="headerlink" title="编辑配置"></a>编辑配置</h3><p>打开 <code>steamcommunity_302.caddy.json</code></p>
+<p>找到随机生成的端口号，此处端口为 19736</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>steamcommunity.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>www.steamcommunity.com:<span class="hljs-number">19736</span> &#123;<br>    tls steamcommunity.crt steamcommunity.key<br>    @steamcommunityrp &#123;<br>    path <span class="hljs-regexp">/comment/</span>*<br>    path <span class="hljs-regexp">/forum/</span>*<br>···<br><br>https:<span class="hljs-regexp">//</span>store.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>api.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>help.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>login.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>store.akamai.steamstatic.com:<span class="hljs-number">19736</span> &#123;<br><span class="hljs-comment">#tls self_signed</span><br>tls steamcommunity.crt steamcommunity.key<br>···<br></code></pre></td></tr></table></figure>
+
+<p>将所有的 <code>:19736</code> 删除，处理后的部分如下</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>steamcommunity.com https:<span class="hljs-regexp">//</span>www.steamcommunity.com &#123;<br>    tls steamcommunity.crt steamcommunity.key<br>    @steamcommunityrp &#123;<br>    path <span class="hljs-regexp">/comment/</span>*<br>    path <span class="hljs-regexp">/forum/</span>*<br>···<br><br>https:<span class="hljs-regexp">//</span>store.steampowered.com https:<span class="hljs-regexp">//</span>api.steampowered.com https:<span class="hljs-regexp">//</span>help.steampowered.com https:<span class="hljs-regexp">//</span>login.steampowered.com https:<span class="hljs-regexp">//</span>store.akamai.steamstatic.com &#123;<br><span class="hljs-comment">#tls self_signed</span><br>tls steamcommunity.crt steamcommunity.key<br>···<br></code></pre></td></tr></table></figure>
+
+<h3 id="导入根证书"><a href="#导入根证书" class="headerlink" title="导入根证书"></a>导入根证书</h3><p>Archlinux：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># cp steamcommunityCA.pem <span class="hljs-regexp">/etc/</span>ca-certificates<span class="hljs-regexp">/trust-source/</span>anchors/steamcommunityCA.crt<br><br># trust extract-compat<br></code></pre></td></tr></table></figure>
+
+<p>Centos:</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># cp steamcommunityCA.pem <span class="hljs-regexp">/etc/</span>pki<span class="hljs-regexp">/ca-trust/</span><span class="hljs-keyword">source</span>/anchors<br><br># <span class="hljs-regexp">/bin/u</span>pdate-ca-trust<br></code></pre></td></tr></table></figure>
+<p>Ubuntu:</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># cp steamcommunityCA.pem <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/share/</span>ca-certificates<br><br># update-ca-certificates<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Centos 和 Ubuntu 的导入方式来自 <a target="_blank" rel="noopener" href="https://www.dogfight360.com/blog/2319/">Dogfight360</a> ，不保证一定可用</p>
+</blockquote>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>赋予caddy可执行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x caddy<br></code></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">./caddy run <span class="hljs-attr">--config</span> steamcommunity_302<span class="hljs-selector-class">.caddy</span><span class="hljs-selector-class">.json</span> <span class="hljs-attr">--adapter</span> caddyfile<br></code></pre></td></tr></table></figure>
+
+<p>如启动无报错 Ctrl+C 强行停止，配置 Systemd 服务</p>
+<p>新建编辑 <code>.config/systemd/user/caddy.service</code>，修改两处 <code>/data/caddy</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Caddy Steam Reverse Proxy<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">WorkingDirectory</span>=/data/caddy<br><span class="hljs-attr">ExecStart</span>=/data/caddy/caddy run --config steamcommunity_302.caddy.json --adapter caddyfile<br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=default.target<br></code></pre></td></tr></table></figure>
+
+<p>运行并启动服务</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">$ systemctl --<span class="hljs-keyword">user</span> <span class="hljs-title">daemon-reload</span><br>$ systemctl --<span class="hljs-keyword">user</span> <span class="hljs-title">enable</span> --now caddy.service<br></code></pre></td></tr></table></figure>
+
+<p>查看服务状态</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">$ systemctl --<span class="hljs-keyword">user</span> <span class="hljs-title">status</span> caddy.service<br></code></pre></td></tr></table></figure>
+
+<h3 id="疑难解答"><a href="#疑难解答" class="headerlink" title="疑难解答"></a>疑难解答</h3><ul>
+<li>steamcommunity_302.caddy.json 不存在？<br>steamcommunity 302 未成功运行，尝试在 windows 环境下重新运行</li>
 </ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="Heroku-配置"><a href="#Heroku-配置" class="headerlink" title="Heroku 配置"></a>Heroku 配置</h3><p>在两个账号下分别配置两个项目，切勿配置在同一账户下，免费时间是以账户为单位而非实例。配置过程略，根据自己需要选择，最后需要两个这样的 URL <code>https://******.herokuapp.com/</code></p>
-<h3 id="Cloudflare-配置"><a href="#Cloudflare-配置" class="headerlink" title="Cloudflare 配置"></a>Cloudflare 配置</h3><ol>
-<li><p>添加 DNS 记录，类型 <code>AAAA</code>，名称自定，IPv6 地址为 <code>100::</code>，代理状态打勾，保存</p>
-</li>
-<li><p>Workers - 管理 Workers - 创建服务，服务名称自定，这里假设为 <code>heroku-dns</code>，创建服务</p>
-</li>
-<li><p>点击快速编辑，填入以下代码，手动替换 url1 和 url2，保存并部署</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">addEventListener</span>(<br>    <span class="hljs-string">&quot;fetch&quot;</span>,<span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> &#123;<br>        <span class="hljs-keyword">let</span> url=<span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(event.<span class="hljs-property">request</span>.<span class="hljs-property">url</span>);     <br>        <span class="hljs-keyword">let</span> localDate = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br>        <span class="hljs-keyword">let</span> day = localDate.<span class="hljs-title function_">getDate</span>();<br><br>        <span class="hljs-keyword">if</span> (day&lt;<span class="hljs-number">15</span>) <span class="hljs-comment">//每月前十五天使用url1,后十五天使用url2</span><br>        &#123;<br>            url.<span class="hljs-property">hostname</span>=<span class="hljs-string">&quot;******.herokuapp.com&quot;</span>; <span class="hljs-comment">//url1</span><br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            url.<span class="hljs-property">hostname</span>=<span class="hljs-string">&quot;******.herokuapp.com&quot;</span>; <span class="hljs-comment">//url2</span><br>        &#125;<br>        <span class="hljs-comment">//console.log(`Request url: $&#123;url.hostname&#125;`);</span><br>        <span class="hljs-keyword">let</span> request=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Request</span>(url,event.<span class="hljs-property">request</span>);    <br>        event. <span class="hljs-title function_">respondWith</span>(       <br>            <span class="hljs-title function_">fetch</span>(request)    <br>        )  <br>    &#125;<br>)<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>Workers - HTTP 路由 - 添加路由，<code>路由</code> 处填写 <code>名称.域名.顶级域名/*</code>，名称处填写第一步中 DNS 记录里填写的名称，域名填写当前在 Cloudflare 添加解析的域名，别忘了后面的 <code>/*</code>；服务选择第二步新建的 <code>heroku-dns</code>，环境 <code>production</code>，保存</p>
-</li>
-<li><p>此时访问域名就能访问到部署在 Heroku 上的服务，可以在 Workers 的编辑界面测试，取消掉 <code>console.log</code> 行的注释，发送请求就能在控制台看到当前使用的是哪个 URL</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>单个账户的 550 小时用半个月是完全没有问题的，可以使用 <code>uptime</code> 等监控程序每15分钟一次使 Heroku 永不休眠，避免唤醒时的巨大访问延迟</p>
 
                 
               </div>
@@ -353,7 +384,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/PaaS/" class="category-chain-item">PaaS</a>
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
   
   
 
@@ -368,9 +399,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Heroku/">#Heroku</a>
+        <a href="/tags/Linux/">#Linux</a>
       
-        <a href="/tags/Cloudflare/">#Cloudflare</a>
+        <a href="/tags/Steam/">#Steam</a>
       
     </div>
   
@@ -382,8 +413,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Heroku+Cloudflare 免费账号实现24/7在线及域名绑定</div>
-      <div>http://example.com/2022/07/23/heroku-cf/</div>
+      <div>在Linux上使用Caddy反代Steam社区</div>
+      <div>http://example.com/2022/10/14/steam-caddy/</div>
     </div>
     <div class="license-meta">
       
@@ -395,7 +426,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月23日</div>
+          <div>2022年10月14日</div>
         </div>
       
       
@@ -427,18 +458,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/14/steam-caddy/" title="在Linux上使用Caddy反代Steam社区">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">在Linux上使用Caddy反代Steam社区</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/19/minecraft-memory/" title="Minecraft 在 Linux 下内存占用极多的问题">
-                        <span class="hidden-mobile">Minecraft 在 Linux 下内存占用极多的问题</span>
+                      <a href="/2022/07/23/heroku-cf/" title="Heroku+Cloudflare 免费账号实现24/7在线及域名绑定">
+                        <span class="hidden-mobile">Heroku+Cloudflare 免费账号实现24/7在线及域名绑定</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
