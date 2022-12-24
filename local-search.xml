@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Linux光标主题配置</title>
+    <link href="/2022/12/24/linux-cursor/"/>
+    <url>/2022/12/24/linux-cursor/</url>
+    
+    <content type="html"><![CDATA[<p>WM 下配置系统全局光标主题</p><span id="more"></span><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>以 <a href="https://github.com/catppuccin/cursors/"><code>Catppuccin-Frappe-Light-Cursors</code></a> 为例</p><p>从仓库下载 <code>Catppuccin-Frappe-Light-Cursors.zip</code>，解压至 <code>~/.local/share/icons</code></p><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs axapta">icons<br>├── Catppuccin-Frappe-Light-Cursors<br>│   ├── cursors<br>│   └── <span class="hljs-keyword">index</span>.theme<br></code></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="Qt"><a href="#Qt" class="headerlink" title="Qt"></a>Qt</h3><p><code>~/.icons/default/index.theme</code></p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[icon theme]</span><br><span class="hljs-attr">Inherits</span>=Catppuccin-Frappe-Light-Cursors<br></code></pre></td></tr></table></figure><h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p><code>~/.zlogin</code></p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">XCURSOR_THEME</span>=Catppuccin-Frappe-Light-Cursors<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">XCURSOR_SIZE</span>=32<br></code></pre></td></tr></table></figure><h3 id="GTK"><a href="#GTK" class="headerlink" title="GTK"></a>GTK</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">gsettings set org<span class="hljs-selector-class">.gnome</span><span class="hljs-selector-class">.desktop</span><span class="hljs-selector-class">.interface</span> <span class="hljs-attribute">cursor</span>-theme Catppuccin-Frappe-Light-Cursors<br>gsettings set org<span class="hljs-selector-class">.gnome</span><span class="hljs-selector-class">.desktop</span><span class="hljs-selector-class">.interface</span> <span class="hljs-attribute">cursor</span>-size <span class="hljs-number">32</span><br></code></pre></td></tr></table></figure><h3 id="Hyprland"><a href="#Hyprland" class="headerlink" title="Hyprland"></a>Hyprland</h3><p><code>~/.config/hypr/hyprland.conf</code></p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">exec-once</span> <span class="hljs-operator">=</span> hyprctl setcursor Catppuccin-Frappe-Light-Cursors <span class="hljs-number">32</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Unixporn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>在Linux上使用Caddy反代Steam社区</title>
     <link href="/2022/10/14/steam-caddy/"/>
     <url>/2022/10/14/steam-caddy/</url>
