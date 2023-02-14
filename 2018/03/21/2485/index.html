@@ -16,21 +16,21 @@
   <meta name="author" content="Sakari">
   <meta name="keywords" content="">
   
-    <meta name="description" content="测试平台：Openwrt 在&#x2F;etc&#x2F;hotplug.d&#x2F;iface&#x2F;下添加30-routes文件,系统将在接口状态发生生变化时执行该脚本。">
+    <meta name="description" content="Prim算法 poj.org 2485.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何让pptp连接&#x2F;断开后自动添加路由">
-<meta property="og:url" content="http://example.com/2018/10/19/pptp%20route/index.html">
+<meta property="og:title" content="poj2485 Prim算法">
+<meta property="og:url" content="https://xzsk2.github.io/2018/03/21/2485/index.html">
 <meta property="og:site_name" content="Sakari&#39;s Blog">
-<meta property="og:description" content="测试平台：Openwrt 在&#x2F;etc&#x2F;hotplug.d&#x2F;iface&#x2F;下添加30-routes文件,系统将在接口状态发生生变化时执行该脚本。">
+<meta property="og:description" content="Prim算法 poj.org 2485.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-10-19T00:00:00.000Z">
-<meta property="article:modified_time" content="2018-10-19T00:00:00.000Z">
+<meta property="article:published_time" content="2018-03-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-03-21T16:00:00.000Z">
 <meta property="article:author" content="Sakari">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>如何让pptp连接/断开后自动添加路由 - Sakari&#39;s Blog</title>
+  <title>poj2485 Prim算法 - Sakari&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -72,7 +72,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"xzsk2.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"UA-191721829-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -227,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="如何让pptp连接/断开后自动添加路由"></span>
+            <span id="subtitle" data-typed-text="poj2485 Prim算法"></span>
           
         </div>
 
@@ -238,8 +238,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2018-10-19 00:00" pubdate>
-          2018年10月19日 凌晨
+        <time datetime="2018-03-22 00:00" pubdate>
+          2018年3月22日 凌晨
         </time>
       </span>
     
@@ -251,7 +251,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          555 字
+          1.4k 字
         
       </span>
     
@@ -263,7 +263,7 @@
         
         
           <!-- compatible with older versions-->
-          2 分钟
+          5 分钟
         
       </span>
     
@@ -301,25 +301,16 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">如何让pptp连接/断开后自动添加路由</h1>
+            <h1 style="display: none">poj2485 Prim算法</h1>
             
             
               <div class="markdown-body">
                 
-                <p>测试平台：Openwrt</p>
-<p>在<code>/etc/hotplug.d/iface/</code>下添加<code>30-routes</code>文件,系统将在接口状态发生生变化时执行该脚本。</p>
+                <p>Prim算法</p>
+<p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=2485">poj.org 2485</a>.</p>
 <span id="more"></span>
 
-<p>然后在<code>30-routes</code>中写入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifdown&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;pptp-vpn0&quot;</span> ]<br><span class="hljs-keyword">then</span><br><br><span class="hljs-comment">#在此添加断开后的代码</span><br><br><span class="hljs-keyword">fi</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifup&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;pptp-vpn0&quot;</span> ]<br><span class="hljs-keyword">then</span><br><br><span class="hljs-comment">#在此添加连接后需要执行的代码</span><br><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
-
-
-<p>把<code>pptp-vpn0</code>修改为自己想要的接口名。</p>
-<p>比如我现在需要在<code>pptp-vpn0</code>断开后自动添加192.168.0.1为默认路由，则设置如下</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION</span>&quot;</span> = <span class="hljs-string">&quot;ifdown&quot;</span> -a <span class="hljs-string">&quot;<span class="hljs-variable">$INTERFACE</span>&quot;</span> = <span class="hljs-string">&quot;virtual**&quot;</span> ]<br>then<br><span class="hljs-built_in"></span><br><span class="hljs-built_in">route </span><span class="hljs-built_in">add</span><span class="hljs-built_in"> default </span>gw 192.168.0.1<br><br>fi<br></code></pre></td></tr></table></figure>
-
-
-<p>加入了一行<code>route add default gw 192.168.0.1</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;stdafx.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX 1000</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAXCOST 0x3f3f3f3f</span><br><br><span class="hljs-type">int</span> graph[MAX][MAX];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">prim</span><span class="hljs-params">(<span class="hljs-type">int</span> graph[][MAX], <span class="hljs-type">int</span> n)</span> <span class="hljs-comment">//n顶点个数</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> lowcost[MAX]; <span class="hljs-comment">//lowcost[i]:以i为终点的边的最小权值,lowcost[i]=0表示i点加入了MST</span><br>	<span class="hljs-type">int</span> mst[MAX]; <span class="hljs-comment">//mst[i]:对应lowcost[i]的起点,mst[i]=0表示起点i加入MST</span><br>	<span class="hljs-type">int</span> i, j, min, minid;<br>	<span class="hljs-type">int</span> max = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">2</span>; i &lt;= n; i++)<br>	&#123;<br>		lowcost[i] = graph[<span class="hljs-number">1</span>][i]; <span class="hljs-comment">//从1开始到所有点的权值</span><br>		mst[i] = <span class="hljs-number">1</span>; <span class="hljs-comment">//对应lowcost[i]的起点为1</span><br>	&#125;<br>	mst[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>; <span class="hljs-comment">//1点在MST中</span><br>	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">2</span>; i &lt;= n; i++)<br>	&#123;<br>		min = MAXCOST; <span class="hljs-comment">//min为最小权值</span><br>		minid = <span class="hljs-number">0</span>; <span class="hljs-comment">//最小权值对应的点</span><br>		<span class="hljs-keyword">for</span> (j = <span class="hljs-number">2</span>; j &lt;= n; j++)<br>		&#123;<br>			<span class="hljs-keyword">if</span> (lowcost[j] &lt; min &amp;&amp; lowcost[j] != <span class="hljs-number">0</span>)<br>			&#123;<br>				min = lowcost[j];<br>				minid = j;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//输出示例V1-V3=1</span><br>		<span class="hljs-keyword">if</span> (min &gt; max)<br>			max = min; <span class="hljs-comment">//最小权值累加</span><br>		lowcost[minid] = <span class="hljs-number">0</span>; <span class="hljs-comment">//加入MST</span><br>		<span class="hljs-keyword">for</span> (j = <span class="hljs-number">2</span>; j &lt;= n; j++) <span class="hljs-comment">//更新lowcost[]和mst[]</span><br>		&#123;<br>			<span class="hljs-keyword">if</span> (graph[minid][j] &lt; lowcost[j] &amp;&amp; lowcost[j] != <span class="hljs-number">0</span>)<br>			&#123;<br>				lowcost[j] = graph[minid][j];<br>				mst[j] = minid;<br>			&#125;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> max;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> T;<br>	<span class="hljs-type">int</span> s;<br>	<span class="hljs-type">int</span> sum;<br>	<span class="hljs-built_in">memset</span>(graph, MAXCOST, <span class="hljs-built_in">sizeof</span>(graph));<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;T);<br>	<span class="hljs-keyword">while</span> (T--)<br>	&#123;<br>		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;s);<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; s + <span class="hljs-number">1</span>; i++)<br>			<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt; s + <span class="hljs-number">1</span>; j++)<br>			&#123;<br>				<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;graph[i][j]);<br>				<span class="hljs-keyword">if</span> (!graph[i][j])<br>					graph[i][j] = MAXCOST;<br>			&#125;<br>		sum = <span class="hljs-built_in">prim</span>(graph, s);<br>		cout &lt;&lt; sum &lt;&lt; endl;<br>	&#125;<br><br>	<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -338,7 +329,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Router/" class="category-chain-item">Router</a>
+  <a href="/categories/OJ/" class="category-chain-item">OJ</a>
   
   
 
@@ -358,8 +349,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>如何让pptp连接/断开后自动添加路由</div>
-      <div>http://example.com/2018/10/19/pptp route/</div>
+      <div>poj2485 Prim算法</div>
+      <div>https://xzsk2.github.io/2018/03/21/2485/</div>
     </div>
     <div class="license-meta">
       
@@ -371,7 +362,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2018年10月19日</div>
+          <div>2018年3月22日</div>
         </div>
       
       
@@ -403,21 +394,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/17/proxy/" title="Windows下为PowerShell/CMD/Git设置代理">
+                      <a href="/2018/04/20/1458/" title="poj1458 最长公共子序列长度">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Windows下为PowerShell/CMD/Git设置代理</span>
+                        <span class="hidden-mobile">poj1458 最长公共子序列长度</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2018/06/05/zznuoj%202113/" title="Image Recognition">
-                        <span class="hidden-mobile">Image Recognition</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
