@@ -263,7 +263,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          641 字
+          612 字
         
       </span>
     
@@ -311,7 +311,7 @@
                 <p>使用 dae 和 clash 实现全局代理，透明且高性能</p>
 <span id="more"></span>
 
-<p>[Github 仓库] (<a target="_blank" rel="noopener" href="https://github.com/xzsk2/network-configs">https://github.com/xzsk2/network-configs</a>)</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/xzsk2/network-configs">Github 仓库</a></p>
 <h2 id="使用项目"><a href="#使用项目" class="headerlink" title="使用项目"></a>使用项目</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/daeuniverse/dae">dae</a>：高性能全局透明代理</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/MetaCubeX/Clash.Meta/tree/Meta">Clash.Meta</a>：作为 dae 的上游提供代理</li>
@@ -324,7 +324,7 @@
 </li>
 </ul>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="clash"><a href="#clash" class="headerlink" title="clash"></a>clash</h3><p>本节可跳过，可使用现有的正常工作的配置文件，仅需要保证 clash 的端口和 dae node 中配置的一致。与 dae 共同使用时请保证代理的各种全局代理方案（tun、iptables 等）均已关闭</p>
-<h4 id="转换订阅"><a href="#转换订阅" class="headerlink" title="转换订阅"></a>转换订阅</h4><p>自行搭建 <a target="_blank" rel="noopener" href="https://github.com/qier222/proxy-provider-converter">proxy-provider-converter</a>，或使用 <a target="_blank" rel="noopener" href="https://proxy-converter.sakari.top/">proxy-converter.sakari.top</a>，将 clash 订阅转换成 <code>Proxy Provider</code> 支持的格式</p>
+<h4 id="转换订阅"><a href="#转换订阅" class="headerlink" title="转换订阅"></a>转换订阅</h4><p>自行搭建 <a target="_blank" rel="noopener" href="https://github.com/qier222/proxy-provider-converter">proxy-provider-converter</a>，或使用 <a target="_blank" rel="noopener" href="https://proxy-converter.sakari.top/">proxy-converter.sakari.top</a>，将 clash 订阅转换成 <code>Proxy Provider</code> 支持的格式，或直接使用 v2ray 订阅连接</p>
 <h4 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h4><p>编辑 <a href="clash/config.yaml">clash&#x2F;config.yaml</a>，将转换后的链接填入 <code>url</code> 中</p>
 <p>下载 <a target="_blank" rel="noopener" href="https://github.com/yaling888/yacd/archive/gh-pages.zip">Yacd-meta</a>，解压至配置文件中 <code>external-ui</code> 所在目录</p>
 <p>根据需要修改分流规则</p>
