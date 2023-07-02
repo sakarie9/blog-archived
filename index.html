@@ -58,7 +58,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"xzsk2.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"UA-191721829-1","gtag":"G-1Q2TX0XR26","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"xzsk2.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"measurement":4630422092},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -72,28 +72,16 @@
   
 
   
-    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.google-analytics.com/analytics.js', function() {
-          window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments) };
-          ga.l = +new Date;
-          ga('create', 'UA-191721829-1', 'auto');
-          ga('send', 'pageview');
-        });
-      }
-    </script>
-  
-
-  
-    <!-- Google gtag.js -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-1Q2TX0XR26', function() {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag() {
+            dataLayer.push(arguments);
+          }
           gtag('js', new Date());
-          gtag('config', 'G-1Q2TX0XR26');
+          gtag('config', '');
         });
       }
     </script>
@@ -267,12 +255,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2023/dae-clash/" target="_self">
           使用dae和clash实现的全局代理方案
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2023/dae-clash/" target="_self">
@@ -338,12 +326,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2023/github-actions-bot/" target="_self">
           作为 github-actions[bot] 进行 commit
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2023/github-actions-bot/" target="_self">
@@ -407,12 +395,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/linux-cursor/" target="_self">
           Linux光标主题配置
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/linux-cursor/" target="_self">
@@ -476,12 +464,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/steam-caddy/" target="_self">
           在Linux上使用Caddy反代Steam社区
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/steam-caddy/" target="_self">
@@ -545,12 +533,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/heroku-cf/" target="_self">
           Heroku+Cloudflare 免费账号实现24/7在线及域名绑定
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/heroku-cf/" target="_self">
@@ -614,12 +602,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/minecraft-memory/" target="_self">
           Minecraft 在 Linux 下内存占用极多的问题
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/minecraft-memory/" target="_self">
@@ -683,12 +671,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/android-language/" target="_self">
           Lawnchair 应用抽屉中英混排
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/android-language/" target="_self">
@@ -750,12 +738,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/win11-bypass/" target="_self">
           手动绕过 Windows 11 安装硬件限制
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/win11-bypass/" target="_self">
@@ -817,12 +805,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2021/tg-qq-gocq/" target="_self">
           Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2021/tg-qq-gocq/" target="_self">
@@ -890,12 +878,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2021/air-conditioner-room/" target="_self">
           空调房
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2021/air-conditioner-room/" target="_self">
