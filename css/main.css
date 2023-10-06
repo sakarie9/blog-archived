@@ -865,7 +865,7 @@ i.iconfont {
   --highlight-bg-color: #f6f8fa;
   --inlinecode-bg-color: rgba(175,184,193,0.2);
 }
-@media not print and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --color-mode: "dark";
   }
@@ -970,6 +970,11 @@ i.iconfont {
   [data-user-color-scheme="dark"] .gt-comment-admin .gt-comment-content {
     background-color: transparent;
     transition: background-color 0.2s ease-in-out;
+  }
+}
+@media print {
+  :root {
+    --color-mode: "light";
   }
 }
 .fade-in-up {
