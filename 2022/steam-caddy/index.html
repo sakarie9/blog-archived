@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog-archived/img/fluid.png">
+  <link rel="icon" href="/blog-archived/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="在 Linux 上 使用 Caddy 原生实现 Steamcommunity 302 的功能并实现开机自启">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux上使用Caddy反代Steam社区">
-<meta property="og:url" content="https://xzsk2.github.io/2022/steam-caddy/index.html">
+<meta property="og:url" content="https://sakarie9.github.io/blog-archived/2022/steam-caddy/index.html">
 <meta property="og:site_name" content="Sakari&#39;s Blog">
 <meta property="og:description" content="在 Linux 上 使用 Caddy 原生实现 Steamcommunity 302 的功能并实现开机自启">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xzsk2.github.io/img/posts/steam-caddy.webp">
+<meta property="og:image" content="https://sakarie9.github.io/blog-archived/img/posts/steam-caddy.webp">
 <meta property="article:published_time" content="2022-10-14T07:20:00.000Z">
 <meta property="article:modified_time" content="2022-10-14T07:20:00.000Z">
 <meta property="article:author" content="Sakari">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Steam">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://xzsk2.github.io/img/posts/steam-caddy.webp">
+<meta name="twitter:image" content="https://sakarie9.github.io/blog-archived/img/posts/steam-caddy.webp">
   
   
   
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/blog-archived/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog-archived/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog-archived/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"xzsk2.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-1Q2TX0XR26"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"sakarie9.github.io","root":"/blog-archived/","version":"1.9.7","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog-archived/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/blog-archived/js/utils.js" ></script>
+  <script  src="/blog-archived/js/color-schema.js" ></script>
   
 
   
@@ -89,13 +89,13 @@
     <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-1Q2TX0XR26", function() {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
           }
           gtag('js', new Date());
-          gtag('config', 'G-1Q2TX0XR26');
+          gtag('config', '');
         });
       }
     </script>
@@ -112,7 +112,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
 
 
 <body>
@@ -124,7 +124,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/blog-archived/">
       <strong>Sakari&#39;s Blog</strong>
     </a>
 
@@ -143,7 +143,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/blog-archived/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -155,7 +155,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/blog-archived/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -167,7 +167,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/blog-archived/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -179,7 +179,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/blog-archived/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -191,7 +191,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/blog-archived/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -221,7 +221,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/posts/steam-caddy.webp') no-repeat center center; background-size: cover;">
+     style="background: url('/blog-archived/img/posts/steam-caddy.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -250,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          565 字
         
       </span>
     
@@ -319,20 +319,20 @@
 
 <p>打开 <code>steamcommunity_302.caddy.json</code></p>
 <p>找到随机生成的端口号，此处端口为 19736</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>steamcommunity.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>www.steamcommunity.com:<span class="hljs-number">19736</span> &#123;<br>    tls steamcommunity.crt steamcommunity.key<br>    @steamcommunityrp &#123;<br>    path <span class="hljs-regexp">/comment/</span>*<br>    path <span class="hljs-regexp">/forum/</span>*<br>···<br><br>https:<span class="hljs-regexp">//</span>store.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>api.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>help.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>login.steampowered.com:<span class="hljs-number">19736</span> https:<span class="hljs-regexp">//</span>store.akamai.steamstatic.com:<span class="hljs-number">19736</span> &#123;<br><span class="hljs-comment">#tls self_signed</span><br>tls steamcommunity.crt steamcommunity.key<br>···<br></code></pre></td></tr></table></figure>
+<figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs roboconf">https://steamcommunity.com:19736 https://www.steamcommunity.com:19736 &#123;<br>    <span class="hljs-attribute">tls steamcommunity.crt steamcommunity.key</span><br><span class="hljs-attribute">    @steamcommunityrp &#123;</span><br><span class="hljs-attribute">    path /comment/*</span><br><span class="hljs-attribute">    path /forum/*</span><br><span class="hljs-attribute">···</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute">https</span>://store<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span>:19736 https://api<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span>:19736 https://help<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span>:19736 https://login<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span>:19736 https://store<span class="hljs-variable">.akamai</span><span class="hljs-variable">.steamstatic</span><span class="hljs-variable">.com</span>:19736 &#123;<br>#tls self_signed<br>tls steamcommunity<span class="hljs-variable">.crt</span> steamcommunity<span class="hljs-variable">.key</span><br>···<br></code></pre></td></tr></table></figure>
 
 <p>将所有的 <code>:19736</code> 删除，处理后的部分如下</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>steamcommunity.com https:<span class="hljs-regexp">//</span>www.steamcommunity.com &#123;<br>    tls steamcommunity.crt steamcommunity.key<br>    @steamcommunityrp &#123;<br>    path <span class="hljs-regexp">/comment/</span>*<br>    path <span class="hljs-regexp">/forum/</span>*<br>···<br><br>https:<span class="hljs-regexp">//</span>store.steampowered.com https:<span class="hljs-regexp">//</span>api.steampowered.com https:<span class="hljs-regexp">//</span>help.steampowered.com https:<span class="hljs-regexp">//</span>login.steampowered.com https:<span class="hljs-regexp">//</span>store.akamai.steamstatic.com &#123;<br><span class="hljs-comment">#tls self_signed</span><br>tls steamcommunity.crt steamcommunity.key<br>···<br></code></pre></td></tr></table></figure>
+<figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs roboconf">https://steamcommunity.com https://www.steamcommunity.com &#123;<br>    <span class="hljs-attribute">tls steamcommunity.crt steamcommunity.key</span><br><span class="hljs-attribute">    @steamcommunityrp &#123;</span><br><span class="hljs-attribute">    path /comment/*</span><br><span class="hljs-attribute">    path /forum/*</span><br><span class="hljs-attribute">···</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute">https</span>://store<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span> https://api<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span> https://help<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span> https://login<span class="hljs-variable">.steampowered</span><span class="hljs-variable">.com</span> https://store<span class="hljs-variable">.akamai</span><span class="hljs-variable">.steamstatic</span><span class="hljs-variable">.com</span> &#123;<br>#tls self_signed<br>tls steamcommunity<span class="hljs-variable">.crt</span> steamcommunity<span class="hljs-variable">.key</span><br>···<br></code></pre></td></tr></table></figure>
 
 </details>
 
 <h3 id="导入根证书"><a href="#导入根证书" class="headerlink" title="导入根证书"></a>导入根证书</h3><p>Archlinux：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># cp steamcommunityCA.pem <span class="hljs-regexp">/etc/</span>ca-certificates<span class="hljs-regexp">/trust-source/</span>anchors/steamcommunityCA.crt<br><br># trust extract-compat<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">cp</span> steamcommunityCA.pem /etc/ca-certificates/trust-source/anchors/steamcommunityCA.crt</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">trust extract-compat</span><br></code></pre></td></tr></table></figure>
 
 <p>Centos:</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># cp steamcommunityCA.pem <span class="hljs-regexp">/etc/</span>pki<span class="hljs-regexp">/ca-trust/</span><span class="hljs-keyword">source</span>/anchors<br><br># <span class="hljs-regexp">/bin/u</span>pdate-ca-trust<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">cp</span> steamcommunityCA.pem /etc/pki/ca-trust/source/anchors</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">/bin/update-ca-trust</span><br></code></pre></td></tr></table></figure>
 <p>Ubuntu:</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># cp steamcommunityCA.pem <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/share/</span>ca-certificates<br><br># update-ca-certificates<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">cp</span> steamcommunityCA.pem /usr/local/share/ca-certificates</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">update-ca-certificates</span><br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>Centos 和 Ubuntu 的导入方式来自 <a target="_blank" rel="noopener" href="https://www.dogfight360.com/blog/2319/">Dogfight360</a> ，不保证一定可用</p>
@@ -377,7 +377,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  <a href="/blog-archived/categories/Linux/" class="category-chain-item">Linux</a>
   
   
 
@@ -392,9 +392,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/blog-archived/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/Steam/" class="print-no-link">#Steam</a>
+        <a href="/blog-archived/tags/Steam/" class="print-no-link">#Steam</a>
       
     </div>
   
@@ -407,7 +407,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>在Linux上使用Caddy反代Steam社区</div>
-      <div>https://xzsk2.github.io/2022/steam-caddy/</div>
+      <div>https://sakarie9.github.io/blog-archived/2022/steam-caddy/</div>
     </div>
     <div class="license-meta">
       
@@ -457,7 +457,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/linux-cursor/" title="Linux光标主题配置">
+                      <a href="/blog-archived/2022/linux-cursor/" title="Linux光标主题配置">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Linux光标主题配置</span>
                         <span class="visible-mobile">上一篇</span>
@@ -467,7 +467,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/heroku-cf/" title="Heroku+Cloudflare 免费账号实现24/7在线及域名绑定">
+                      <a href="/blog-archived/2022/heroku-cf/" title="Heroku+Cloudflare 免费账号实现24/7在线及域名绑定">
                         <span class="hidden-mobile">Heroku+Cloudflare 免费账号实现24/7在线及域名绑定</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -641,8 +641,8 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/blog-archived/js/events.js" ></script>
+<script  src="/blog-archived/js/plugins.js" ></script>
 
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
@@ -664,7 +664,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/blog-archived/js/img-lazyload.js" ></script>
   
 
 
@@ -763,7 +763,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/blog-archived/js/local-search.js" ></script>
 
 
 
@@ -771,7 +771,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/blog-archived/js/boot.js" ></script>
 
 
   
